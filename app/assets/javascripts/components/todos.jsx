@@ -1,6 +1,7 @@
 class Todos extends React.Component {
   constructor (props) {
     super(props)
+    this.removeTodo = this.removeTodo.bind(this)
     this.state = {
       todos: this.props.todos,
       title: 'Mietwagen Guenstiger Probeaufgabe',
@@ -29,6 +30,31 @@ class Todos extends React.Component {
     });
   }
 
+  removeTodo (todo) {
+    console.log('removing Todo with ID '+todo.id+' from list...')
+    // TODO: remove todo from list and update state
+    /*
+    const todos = {...this.state.todos}
+    delete todos[todo];
+    this.setState({
+      todos: todos.sort(function(a,b) {
+        return new Date(a.due_time) - new Date(b.due_time);
+      })
+    })
+    */
+  }
+
+  markTodoAsDone (todoId) {
+    callback = this.removeTodo
+    $.ajax({
+        url: '/todos/'+todoId,
+        type: 'DELETE',
+        success: function(todo) {
+          callback(todo)
+        }
+    });
+  }
+
   render () {
     return (
       <div>
@@ -36,7 +62,9 @@ class Todos extends React.Component {
                   due_time={this.state.due_time}
                   onUserInput={(obj) => this.handleUserInput(obj)}
                   onFormSubmit={() => this.handleFormSubmit()} />
-        <TodosList todos={this.state.todos} />
+
+        <TodosList todos={this.state.todos}
+                   markAsDone={(obj) => this.markTodoAsDone(obj)} />
       </div>
     )
   }

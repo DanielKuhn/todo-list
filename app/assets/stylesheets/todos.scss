@@ -48,8 +48,15 @@ body {
   }
 }
 
-.todo {
-  width: 100%;
-  padding-top: 10px;
-  border-bottom: solid 1px #ccc;
+.todos-list {
+  .todo {
+    width: 100%;
+    padding-top: 10px;
+    border-bottom: solid 1px #ccc;
+
+    button {
+      margin-top: -35px;
+      float: right;
+    }
+  }
 }
