@@ -1,0 +1,55 @@
+// Place all the styles related to the Todos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  width: 500px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  padding-bottom: 200px;
+}
+
+.form-component {
+  border-top: solid 1px black;
+  padding-bottom: 1em;
+  border-bottom: solid 1px black;
+
+  .todo-form-label {
+    margin-bottom: 5px;
+  }
+
+  form.add-todo-form {
+    label {
+      float: left;
+    }
+
+    input.todo-title {
+      margin-left: 40px;
+      width: 255px;
+    }
+
+    .rdt {
+      margin-left: 70px;
+    }
+
+    .submit-button {
+      background: #CC0000;
+      color: #FFFFFF;
+      cursor: pointer;
+      border: 0;
+      box-shadow:none;
+      border-radius: 0px;
+      font-size: 20px;
+      padding: 10px;
+      margin-left: 70px;
+    }
+  }
+}
+
+.todo {
+  width: 100%;
+  padding-top: 10px;
+  border-bottom: solid 1px #ccc;
+}
